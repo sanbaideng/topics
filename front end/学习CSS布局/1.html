@@ -1,0 +1,455 @@
+<html>
+<style>
+div1{
+  width: 1000px;
+  margin: 100 auto; 
+}
+.simple {
+  width: 500px;
+  margin: 20px auto;
+  border-style:solid; 
+  border-color:#0ff;
+}
+
+.fancy {
+  width: 500px;
+  margin: 20px auto;
+  padding: 50px;
+  border-width: 10px;
+  border-style:solid; 
+  border-color:#0ff;
+}
+.simple2 {
+  width: 500px;
+  margin: 20px auto;
+  border-style:solid; 
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.fancy2 {
+  width: 500px;
+  margin: 20px auto;
+  padding: 50px;
+  border: solid blue 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.static {
+  position: static;
+  border-style:solid; 
+}
+.relative1 {
+  position: relative;
+}
+.relative2 {
+  position: relative;
+  top: -20px;
+  left: 20px;
+  background-color: white;
+  width: 500px;
+}
+.reddiv{
+  border-style:solid; 
+  border-color:#FF71E2;}
+.greendiv{
+  border-style:solid; 
+  border-color:#00ffE2;}
+.bluediv{
+  border-style:solid; 
+  border-color:#0000E2;}
+  
+  .relative {
+  position: relative;
+  width: 600px;
+  height: 400px;
+}
+.absolute {
+  position: absolute;
+  top: 120px;
+  right: 0;
+  width: 300px;
+  height: 200px;
+}
+
+
+/**
+position 例子 begin
+**/
+.container {
+  position: relative;
+}
+nav1 {
+  position: absolute;
+  left: 0px;
+  width: 200px;
+}
+section {
+  /* position is static by default */
+  margin-left: 200px;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 70px;
+  background-color: white;
+  width: 100%;
+}
+body {
+  margin-bottom: 120px;
+}
+.elem {
+    border: solid #6AC5AC 3px;
+    //position: relative;
+}
+/**
+position 例子 end
+**/
+
+/**
+clear
+**/
+.box {
+  float: left;
+  width: 200px;
+  height: 100px;
+  margin: 1em;
+}
+.label {
+    top: 0;
+    left: 0;
+    padding: 0 3px 3px 0;
+}.after-box {
+  clear: left;
+}
+/**
+clear end
+**/
+
+/**
+clear hack
+**/
+
+img {
+  float: right;
+}
+.clearfix {
+  overflow: auto;
+}
+
+/**
+clear hack end
+**/ 
+article img {
+  float: right;
+  width: 50%;
+} 
+
+
+@media screen and (min-width:600px) {
+  nav {
+    float: left;
+    width: 25%;
+  }
+  section {
+    margin-left: 25%;
+  }
+}
+@media screen and (max-width:599px) {
+  nav li {
+    display: inline;
+  }
+}
+
+.after-box {
+  clear: left;
+}
+
+.box2 {
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  margin: 1em;
+}
+</style>
+<body>
+
+<h3>This is a header</h3>
+<p>This is a paragraph.</p>
+
+<div style="color:#00FF00">
+  <h3>This is a header</h3>
+  <p>This is a paragraph.</p>
+</div>
+<div class="simple"><span class="label">&lt;div class="simple"&gt;</span><p>我小一些...</p></div>
+<div class="fancy"><span class="label">&lt;div class="fancy"&gt;</span><p>我比它大！</p></div>
+
+<div class="simple2"><span class="label">&lt;div class="simple2"&gt;</span><p>我们现在一样大小了！...</p></div>
+<div class="fancy2"><span class="label">&lt;div class="fancy2"&gt;</span><p>万岁！</p></div>
+<div class="static"><span>&lt;div class="static"&gt;</span>static 是默认值。任意 position: static; 的元素不会被特殊的定位。一个 static 元素表示它不会被“positioned”，一个 position 属性被设置为其他值的元素表示它会被“positioned”。
+<span>&lt;div&gt;</span>
+<div></div>
+<br/>
+
+
+<div class="relative1 reddiv"><span class="label">&lt;div class="relative1"&gt;</span><p>relative 表现的和 static 一样，除非你添加了一些额外的属性。</p></div>
+<div class="relative2 greendiv"><span class="label">&lt;div class="relative2"&gt;</span><p>在一个相对定位（position属性的值为relative）的元素上设置 top 、 right 、 bottom 和 left 属性会使其偏离其正常位置。其他的元素的位置则不会受该元素的影响发生位置改变来弥补它偏离后剩下的空隙。</p></div>
+<div class="relative reddiv"><span class="label">&lt;div class="relative"&gt;</span><p>这个元素是相对定位的。如果它是 position: static; ，那么它的绝对定位子元素会跳过它直接相对于body元素定位。.</p>
+
+<div class="absolute greendiv"><span class="label">&lt;div class="absolute"&gt;</span><p>这个元素是绝对定位的。它相对于它的父元素定位。</p></div>
+
+</div>
+</div>
+<hr><hr>----------------------------------------position例子------------------------------------------<hr>
+<div class="container bluediv">
+  <span class="label">&lt;div class="container"></span>
+
+  <nav class="elem reddiv">
+    <span class="label">&lt;nav></span>
+    <ul>
+      <li>
+        <a href="position-example.html">Home</a>
+      </li>
+      <li>
+        <a href="position-example.html">Taco Menu</a>
+      </li>
+      <li>
+        <a href="position-example.html">Draft List</a>
+      </li>
+      <li>
+        <a href="position-example.html">Hours</a>
+      </li>
+      <li>
+        <a href="position-example.html">Directions</a>
+      </li>
+      <li>
+        <a href="position-example.html">Contact</a>
+      </li>
+    </ul>
+    <span class="endlabel">&lt;/nav></span>
+  </nav>
+
+  <section class="elem greendiv">
+    <span class="label">&lt;section></span>
+    <p>
+       <code>section</code> 的 <code>margin-left</code> 样式确保了有足够的空间容纳 <code>nav</code> 元素。
+    </p>
+    <span class="endlabel">&lt;/section></span>
+  </section>
+
+  <section class="elem greendiv">
+    <span class="label">&lt;section></span>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+    </p>
+    <span class="endlabel">&lt;/section></span>
+  </section>
+
+  <section class="elem greendiv">
+    <span class="label">&lt;section></span>
+    <p>
+      注意观察当你调整浏览器窗口时发生了什么。效果很赞！
+    </p>
+    <span class="endlabel">&lt;/section></span>
+  </section>
+
+  <footer class="elem bluediv">
+    <span class="label">&lt;footer></span>
+    <p>
+      如果你使用了一个固定定位的页眉或页脚，确保有足够的空间来显示它们！我在 <code>body</code> 上面加了 <code>margin-bottom</code> 。
+    </p>
+    <span class="endlabel">&lt;/footer></span>
+  </footer>
+
+</div>
+<hr><hr>----------------------------------------clear 例子------------------------------------------<hr>
+
+<div class="box reddiv"><span class="label">&lt;div class="box"&gt;</span>我感觉好像我在漂浮！</div>
+<section class="greendiv after-box" >在这个例子中， section 元素实际上是在 div 之后的（译注：DOM结构上）。然而 div 元素是浮动到左边的，于是 section 中的文字就围绕了 div ，并且 section 元素包围了整个元素。如果我们想让 section 显示在浮动元素之后呢？</section>
+
+<hr><hr>----------------------------------------clear hack 例子------------------------------------------<hr>
+
+<div class="elem clearfix">
+    <span class="label">&lt;div class="clearfix"></span>
+    <img src="images/ilta.png" alt="An Image">
+    <p>
+      好多了！
+    </p>
+  </div>
+
+  
+
+
+<hr><hr>------------------------------------------------------------------------------------------------------------------------------<hr>
+<div class="container elem">
+  <span class="label">&lt;div class="container"></span>
+
+  <nav class="elem elem-red">
+    <span class="label">&lt;nav></span>
+    <ul>
+      <li>
+        <a href="percent.html">Home</a>
+      </li>
+      <li>
+        <a href="percent.html">Taco Menu</a>
+      </li>
+      <li>
+        <a href="percent.html">Draft List</a>
+      </li>
+      <li>
+        <a href="percent.html">Hours</a>
+      </li>
+      <li>
+        <a href="percent.html">Directions</a>
+      </li>
+      <li>
+        <a href="percent.html">Contact</a>
+      </li>
+    </ul>
+    <span class="endlabel">&lt;/nav></span>
+  </nav>
+
+  <section class="elem elem-green">
+    <span class="label">&lt;section></span>
+    <p>
+      当你调整浏览器窗口大小时，布局比以前更酷了！
+    </p>
+    <span class="endlabel">&lt;/section></span>
+  </section>
+
+  <section class="elem elem-green ipsum">
+    <span class="label">&lt;section></span>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+    </p>
+    <span class="endlabel">&lt;/section></span>
+  </section>
+
+</div>
+
+<div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在浮动！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在浮动！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在浮动！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div><div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在浮动！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在浮动！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在浮动！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div><div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在浮动！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在浮动！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在浮动！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+	<div class="after-box reddiv">
+	<span class="label">&lt;div class="after-box"></span>
+      <p>
+        after-box
+      </p>
+      <span class="endlabel">&lt;/div>
+	</div>
+	
+	
+	<div class="box2 elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在浮动！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box2 elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在浮动！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box2 elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在浮动！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+	<div class="box2 elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在浮动！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box2 elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在浮动！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box2 elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在浮动！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+</body>
+</html>
